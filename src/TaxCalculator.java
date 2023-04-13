@@ -1,13 +1,16 @@
 public class TaxCalculator {
-    private final double totalTaxableIncome;
-    private final int category;
+    private double totalTaxableIncome;
+    private PayerCategory category;
     private double slab1, slab2, slab3, slab4, slab5, slab6;
     private double tax1, tax2, tax3, tax4, tax5, tax6;
 
     private double grossTaxLiability;
     private double eligibleAmount;
 
-    public TaxCalculator(double totalTaxableIncome, int category) {
+    public TaxCalculator() {
+    }
+
+    public TaxCalculator(double totalTaxableIncome, PayerCategory category) {
         this.totalTaxableIncome = totalTaxableIncome;
         this.category = category;
         calculateTax();
@@ -17,7 +20,7 @@ public class TaxCalculator {
 
         // Calculate slab values based on category
         switch (category) {
-            case 1:
+            case General:
                 slab1 = Math.min(300000, totalTaxableIncome);
                 slab2 = Math.min(100000, Math.max(0, totalTaxableIncome - 300000));
                 slab3 = Math.min(300000, Math.max(0, totalTaxableIncome - 400000));
@@ -25,7 +28,7 @@ public class TaxCalculator {
                 slab5 = Math.min(500000, Math.max(0, totalTaxableIncome - 1100000));
                 slab6 = Math.max(0, totalTaxableIncome - 1600000);
                 break;
-            case 2:
+            case FemaleOrSeniorCitizen:
                 slab1 = Math.min(350000, totalTaxableIncome);
                 slab2 = Math.min(100000, Math.max(0, totalTaxableIncome - 350000));
                 slab3 = Math.min(300000, Math.max(0, totalTaxableIncome - 450000));
@@ -33,7 +36,7 @@ public class TaxCalculator {
                 slab5 = Math.min(500000, Math.max(0, totalTaxableIncome - 1150000));
                 slab6 = Math.max(0, totalTaxableIncome - 1650000);
                 break;
-            case 3:
+            case Disabled:
                 slab1 = Math.min(450000, totalTaxableIncome);
                 slab2 = Math.min(100000, Math.max(0, totalTaxableIncome - 450000));
                 slab3 = Math.min(300000, Math.max(0, totalTaxableIncome - 550000));
@@ -41,7 +44,7 @@ public class TaxCalculator {
                 slab5 = Math.min(500000, Math.max(0, totalTaxableIncome - 1250000));
                 slab6 = Math.max(0, totalTaxableIncome - 1750000);
                 break;
-            case 4:
+            case GazettedFreedomFighter:
                 slab1 = Math.min(475000, totalTaxableIncome);
                 slab2 = Math.min(100000, Math.max(0, totalTaxableIncome - 475000));
                 slab3 = Math.min(300000, Math.max(0, totalTaxableIncome - 575000));

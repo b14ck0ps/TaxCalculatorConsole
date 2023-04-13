@@ -24,19 +24,19 @@ public class Main {
         System.out.println();
 
         System.out.println("Gross Tax Liability");
-        TaxCalculator taxCalculator = new TaxCalculator(incomeCalculator.getTotalTaxableIncome(), 1);
+        TaxCalculator taxCalculator = new TaxCalculator(incomeCalculator.getTotalTaxableIncome(), PayerCategory.General);
         taxCalculator.PrintSlab();
         System.out.println();
 
         System.out.println("Rebate");
-        RebateCalculator rebateCalculator = new RebateCalculator(incomeCalculator.getTotalTaxableIncome(), 1, investment);
+        RebateCalculator rebateCalculator = new RebateCalculator(taxCalculator.getGrossTaxLiability(), incomeCalculator.getTotalTaxableIncome(), investment);
         System.out.println("Eligible Amount " + taxCalculator.getEligibleAmount());
         System.out.println("Accepted Investment Investment: " + rebateCalculator.getAcceptedInvestment());
         System.out.println("Rebate: " + rebateCalculator.getRebate());
         System.out.println();
 
         System.out.println("Net Tax Payable");
-        NetTaxByZoneCalculator netTaxByZoneCalculator = new NetTaxByZoneCalculator(rebateCalculator.getTaxAfterRebate(), rebateCalculator.getTaxAfterRebate(), 1, investment, 1);
+        NetTaxByZoneCalculator netTaxByZoneCalculator = new NetTaxByZoneCalculator(rebateCalculator.getTaxAfterRebate(), PayerZone.DhakaOrChittagong);
         System.out.println("Gross Tax Liability: " + taxCalculator.getGrossTaxLiability());
         System.out.println("Text After Rebate : " + rebateCalculator.getTaxAfterRebate());
         System.out.println("Net Tax Payable: " + netTaxByZoneCalculator.getNetTax());

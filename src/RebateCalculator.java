@@ -3,9 +3,10 @@ public class RebateCalculator extends TaxCalculator {
     private double Rebate;
     private double TaxAfterRebate;
 
-    public RebateCalculator(double totalTaxableIncome, int category, double investment) {
-        super(totalTaxableIncome, category);
+    public RebateCalculator() {
+    }
 
+    public RebateCalculator(double GrossTaxLiability,double totalTaxableIncome, double investment) {
         // Calculate Allowable Investment
         double AllowableInvestment = totalTaxableIncome * 0.25;
         if (investment < AllowableInvestment) {
@@ -16,7 +17,7 @@ public class RebateCalculator extends TaxCalculator {
         Rebate = Math.round(investment * 0.15);
 
         // Calculate Tax After Rebate
-        TaxAfterRebate = super.getGrossTaxLiability() - Rebate;
+        TaxAfterRebate = GrossTaxLiability - Rebate;
     }
 
     public double getAcceptedInvestment() {
