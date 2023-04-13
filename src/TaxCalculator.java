@@ -2,7 +2,7 @@ public class TaxCalculator {
     private final double totalTaxableIncome;
     private final int category;
     private double slab1, slab2, slab3, slab4, slab5, slab6;
-    private double tex1, tex2, tex3, tex4, tex5, tex6;
+    private double tax1, tax2, tax3, tax4, tax5, tax6;
 
     private double grossTaxLiability;
     private double eligibleAmount;
@@ -55,26 +55,26 @@ public class TaxCalculator {
         }
 
         // Calculate tax for each slab
-        tex1 = slab1 * 0;
-        tex2 = slab2 * 0.05;
-        tex3 = slab3 * 0.1;
-        tex4 = slab4 * 0.15;
-        tex5 = slab5 * 0.2;
-        tex6 = slab6 * 0.25;
+        tax1 = slab1 * 0;
+        tax2 = slab2 * 0.05;
+        tax3 = slab3 * 0.1;
+        tax4 = slab4 * 0.15;
+        tax5 = slab5 * 0.2;
+        tax6 = slab6 * 0.25;
 
         // Calculate gross tax liability and eligible amount
-        this.grossTaxLiability = tex1 + tex2 + tex3 + tex4 + tex5 + tex6;
+        this.grossTaxLiability = tax1 + tax2 + tax3 + tax4 + tax5 + tax6;
         this.eligibleAmount = totalTaxableIncome * 0.25;
     }
 
     void PrintSlab() {
         // Print tax details
-        System.out.println("Upto 300,000 Taka: " + slab1 + " (0%)" + " Tax: " + tex1);
-        System.out.println("On the Next 100,000 Taka: " + slab2 + " (5%)" + " Tax: " + tex2);
-        System.out.println("On the Next 300,000 Taka: " + slab3 + " (10%)" + " Tax: " + tex3);
-        System.out.println("On the Next 400,000 Taka: " + slab4 + " (15%)" + " Tax: " + tex4);
-        System.out.println("On the Next 500,000 Taka: " + slab5 + " (20%)" + " Tax: " + tex5);
-        System.out.println("On the Amount Exceeding : " + slab6 + " (25%)" + " Tax: " + tex6);
+        System.out.println("Upto 300,000 Taka: " + slab1 + " (0%)" + " Tax: " + tax1);
+        System.out.println("On the Next 100,000 Taka: " + slab2 + " (5%)" + " Tax: " + tax2);
+        System.out.println("On the Next 300,000 Taka: " + slab3 + " (10%)" + " Tax: " + tax3);
+        System.out.println("On the Next 400,000 Taka: " + slab4 + " (15%)" + " Tax: " + tax4);
+        System.out.println("On the Next 500,000 Taka: " + slab5 + " (20%)" + " Tax: " + tax5);
+        System.out.println("On the Amount Exceeding : " + slab6 + " (25%)" + " Tax: " + tax6);
 
         System.out.println("Gross Tax Liability: " + grossTaxLiability);
 
