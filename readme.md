@@ -32,10 +32,26 @@ interface for entering input data and displaying the results.
 ## Inspiration
 
 The business logic for this application was inspired by the tax calculator provided by the Rongdhonustudio
-website: https://rongdhonustudio.com/TaxCalculator.html . The Business Logic behind the Tax Calculator is re-written by me in
+website: https://rongdhonustudio.com/TaxCalculator.html . The Business Logic behind the Tax Calculator is re-written by
+me in
 JAVA 8 from the original source code.
 
 Original JavaScript Links
 
 - [script 22.0 A.js](https://rongdhonustudio.com/js/script%2022.0%20A.js)
-- [script 22.0 B.js](hhttps://rongdhonustudio.com/js/script%2022.0%20B.js)
+- [script 22.0 B.js](https://rongdhonustudio.com/js/script%2022.0%20B.js)
+
+## Output Screenshot
+
+### Java Tax Calculator Console Version
+
+|                       Input                       |                       Output                       |
+|:-------------------------------------------------:|:--------------------------------------------------:|
+| ![Input Image 1](https://i.imgur.com/1k3G6fT.png) | ![Output Image 1](https://i.imgur.com/7amOKr4.png) |
+
+### Javascript Tax Calculator Web Version (original)
+
+|                       Input                       |                                                                                                   Output                                                                                                    |
+|:-------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ![Input Image 2](https://i.imgur.com/LAzj8oY.png) | ![Output Image 2](https://i.imgur.com/QxRTB3X.png) ![Output Image 2](https://i.imgur.com/amzw5QY.png) ![Output Image 2](https://i.imgur.com/MRNKwZF.png) ![Output Image 2](https://i.imgur.com/bWs7Ai9.png) |
+
