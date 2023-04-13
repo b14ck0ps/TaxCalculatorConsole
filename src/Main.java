@@ -36,7 +36,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Net Tax Payable");
-        NetTaxByZoneCalculator netTaxByZoneCalculator = new NetTaxByZoneCalculator(rebateCalculator.getTaxAfterRebate(), 1, investment, 1);
+        NetTaxByZoneCalculator netTaxByZoneCalculator = new NetTaxByZoneCalculator(rebateCalculator.getTaxAfterRebate(), rebateCalculator.getTaxAfterRebate(), 1, investment, 1);
         System.out.println("Gross Tax Liability: " + taxCalculator.getGrossTaxLiability());
         System.out.println("Text After Rebate : " + rebateCalculator.getTaxAfterRebate());
         System.out.println("Net Tax Payable: " + netTaxByZoneCalculator.getNetTax());

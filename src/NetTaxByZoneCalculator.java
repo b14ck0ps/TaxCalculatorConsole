@@ -2,10 +2,8 @@ public class NetTaxByZoneCalculator extends RebateCalculator {
 
     private double netTax;
 
-    public NetTaxByZoneCalculator(double totalTaxableIncome, int category, double investment, int zone) {
+    public NetTaxByZoneCalculator(double totalTaxableIncome, double taxAfterRebate, int category, double investment, int zone) {
         super(totalTaxableIncome, category, investment);
-
-        double taxAfterRebate = super.getTaxAfterRebate();
         double grossTaxLiability = super.getGrossTaxLiability();
 
         switch (zone) {
