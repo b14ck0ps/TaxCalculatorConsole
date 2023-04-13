@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
+
+        // Test Data
         double basicSalary = 8000000;
         double houseRent = 20000;
         double medicalAllowance = 140000;
@@ -8,6 +10,10 @@ public class Main {
         double festivalBonus = 20000;
         double investment = 50000;
 
+        PayerCategory payerCategory = PayerCategory.General;
+        PayerZone payerZone = PayerZone.DhakaOrChittagong;
+
+        // Taxable Income Calculation
         TaxableIncome incomeCalculator = new TaxableIncome(basicSalary, houseRent, medicalAllowance, conveyanceAllowance, incentive, festivalBonus);
 
 
@@ -24,7 +30,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Gross Tax Liability");
-        TaxCalculator taxCalculator = new TaxCalculator(incomeCalculator.getTotalTaxableIncome(), PayerCategory.General);
+        TaxCalculator taxCalculator = new TaxCalculator(incomeCalculator.getTotalTaxableIncome(), payerCategory);
         taxCalculator.PrintSlab();
         System.out.println();
 
@@ -36,7 +42,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Net Tax Payable");
-        NetTaxByZoneCalculator netTaxByZoneCalculator = new NetTaxByZoneCalculator(rebateCalculator.getTaxAfterRebate(), PayerZone.DhakaOrChittagong);
+        NetTaxByZoneCalculator netTaxByZoneCalculator = new NetTaxByZoneCalculator(rebateCalculator.getTaxAfterRebate(), payerZone);
         System.out.println("Gross Tax Liability: " + taxCalculator.getGrossTaxLiability());
         System.out.println("Text After Rebate : " + rebateCalculator.getTaxAfterRebate());
         System.out.println("Net Tax Payable: " + netTaxByZoneCalculator.getNetTax());
